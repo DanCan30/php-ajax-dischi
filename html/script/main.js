@@ -11,7 +11,6 @@ const app = new Vue({
             axios.get("../controller.php")
             .then(result => {
                 this.disksList = result.data;
-                console.log(this.disksList);
             })
         }
     },

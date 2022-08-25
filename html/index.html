@@ -23,9 +23,18 @@
 
     <main class="container" id="app">
 
-        <ul>
-            <li v-for="disk in disksList">{{disk.title}}</li>
-        </ul>
+        <div class="disk" v-for="disk in disksList">
+
+            <div class="img-container">
+                <img :src="disk.poster" :alt="`${disk.title} performed by ${disk.author}`">
+                <span>{{ disk.genre }}</span>
+            </div>
+
+            <h2>{{ disk.title }}</h2>
+            <p>{{ disk.author }}</p>
+            <p>{{ disk.year }}</p>
+
+        </div>
 
     </main>
 
