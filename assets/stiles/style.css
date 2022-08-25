@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1E2D3B;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+
+header {
+    background-color: #2E3A46;
+    height: 6vh;
+}
+
+img#logo {
+    max-width: 3rem;
+    margin-left: 2rem;
+    padding: 1rem 0;
+}
+/* Main */
+
+
+main.container {
+    width: 60%;
+    margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+/* Disk card */
+
+.disk {
+    background-color: rgba(255, 255, 255, .1);
+    width: calc((100% / 5) - 2rem);
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.img-container img {
+    width: 100%;
+    background-color: black;
+}
+
+.img-container span {
+    position: absolute;
+    top: 50%;   
+    transform: translate(50%, -50%);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+
+.disk h2 {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+}
+
+.disk p {
+    color:  #6F767A;
+}
+
+.disk p:last-child {
+    padding-bottom: 2rem;
+}
+
+.disk span {
+    opacity: 0;
+}
+
+.disk:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.disk:hover span {
+    animation: slide .3s forwards;  
+}
+
+@keyframes slide {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        opacity: 1;
+        right: 50%;
+    }
+}
+
+.disk:hover img {
+    opacity: .1;
+}
