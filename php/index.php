@@ -13,34 +13,52 @@
 
     <header>
         <img src="../assets/img/Spotify-logo.png" alt="Spotify Logo" id="logo">
+
+        <form action="index.php" method="get">
+
+            <select name="genre" id="">
+                <option value="All">All</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Metal">Metal</option>
+            </select>
+
+            <input type="submit" value="Search">
+
+        </form>
+
     </header>
 
     <main class="container">
 
-        <?php foreach($disks as $disk) {?>
+        <?php foreach($disks as $disk) {
 
-            <div class="disk">
+            if($_GET["genre"] === $disk["genre"] || $_GET["genre"] === "All" ) {
+        ?>
 
-                <div class="img-container">
-                    <?php echo "<img src='" . $disk['poster'] . "' alt='" . $disk["title"] . "'>"?>
-                    <span>
-                        <?php echo $disk["genre"]?>
-                    </span>
-                </div>
+        <div class="disk">
 
-                <h2>
-                    <?php echo $disk["title"]?>
-                </h2>
-                <p>
-                    <?php echo $disk["author"]?>
-                </p>
-                <p>
-                    <?php echo $disk["year"]?>
-                </p>
+            <div class="img-container">
+                <?php echo "<img src='" . $disk['poster'] . "' alt='" . $disk["title"] . "'>" ?>
+
+                <span>
+                    <?php echo $disk["genre"]?>
+                </span>
             </div>
 
+            <h2>
+                <?php echo $disk["title"]?>
+            </h2>
+            <p>
+                <?php echo $disk["author"]?>
+            </p>
+            <p>
+                <?php echo $disk["year"]?>
+            </p>
+        </div>
 
-        <?php } ?>
+        <?php }} ?>
         
     </main>
 

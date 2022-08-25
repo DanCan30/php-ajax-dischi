@@ -38,6 +38,23 @@ header select {
     cursor: pointer;
 }
 
+header input {
+    margin-right: 3rem;
+    font-size: 2.5rem;
+    padding: .3rem 3rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #18D860;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+header input:hover {
+    background-color: #0c863b;
+}
+
 header select option {
     color: #000;
 }
