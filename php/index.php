@@ -34,7 +34,7 @@
 
         <?php foreach($disks as $disk) {
 
-            if($_GET["genre"] === $disk["genre"] || $_GET["genre"] === "All" ) {
+            if(empty($_GET["genre"]) || $_GET["genre"] === $disk["genre"] || $_GET["genre"] === "All" ) {
         ?>
 
         <div class="disk">
