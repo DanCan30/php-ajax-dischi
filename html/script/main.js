@@ -4,6 +4,7 @@ const app = new Vue({
 
     data: {
         disksList: [],
+        selectedGenre: "All",
     },
 
     methods: {

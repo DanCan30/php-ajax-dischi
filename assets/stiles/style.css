@@ -15,6 +15,9 @@ body {
 header {
     background-color: #2E3A46;
     height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 img#logo {
@@ -22,6 +25,12 @@ img#logo {
     margin-left: 2rem;
     padding: 1rem 0;
 }
+
+header select {
+    margin-right: 2rem;
+    font-size: 2rem;
+}
+
 /* Main */
 
 

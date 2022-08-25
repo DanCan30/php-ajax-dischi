@@ -17,29 +17,40 @@
 </head>
 <body>
 
-    <header>
-        <img src="../assets/img/Spotify-logo.png" alt="Spotify Logo" id="logo">
-    </header>
+    <div  id="app">
 
-    <main class="container" id="app">
+        <header>
 
-        <div class="disk" v-for="disk in disksList">
-
-            <div class="img-container">
-                <img :src="disk.poster" :alt="`${disk.title} performed by ${disk.author}`">
-                <span>{{ disk.genre }}</span>
+            <img src="../assets/img/Spotify-logo.png" alt="Spotify Logo" id="logo">
+            
+                <select name="genre-selector" id="" v-model="selectedGenre">
+                    <option value="All">All</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Metal">Metal</option>
+                </select>
+        </header>
+    
+        <main class="container">
+    
+            <div class="disk" v-for="disk in disksList" v-if="disk.genre === selectedGenre || selectedGenre === 'All' ">
+    
+                <div class="img-container">
+                    <img :src="disk.poster" :alt="`${disk.title} performed by ${disk.author}`">
+                    <span>{{ disk.genre }}</span>
+                </div>
+    
+                <h2>{{ disk.title }}</h2>
+                <p>{{ disk.author }}</p>
+                <p>{{ disk.year }}</p>
+    
             </div>
-
-            <h2>{{ disk.title }}</h2>
-            <p>{{ disk.author }}</p>
-            <p>{{ disk.year }}</p>
-
-        </div>
-
-    </main>
-
-
-
+    
+        </main>
+    
+    </div>
+    
     <script src="./script/main.js"></script>
 </body>
 </html>
